@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config/config";
@@ -11,15 +12,20 @@ import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
 import Button from "./Button";
 
+
 // Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
 
 // Image: if API fails to render image then the fallback image used this one
 import NoImage from "../images/no_image.jpg";
 
+
+
 const Home: React.FC = () => {
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
     useHomeFetch();
+    
+  
 
   console.log(state);
 
@@ -59,7 +65,11 @@ const Home: React.FC = () => {
       {state.page < state.total_pages && !loading && (
         <Button callback={() => setIsLoadingMore(true)}>Load More</Button>
       )}
+       <Link to="/Login">Login</Link>
+
+       
     </React.Fragment>
+    
   );
 };
 export default Home;

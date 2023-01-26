@@ -1,23 +1,44 @@
-import React, { useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = (event: { preventDefault: () => void; }) => {
-    event.preventDefault();
+  // const handleSubmit = (event: { preventDefault: () => void; }) => {
+  //   event.preventDefault();
 
-    // tutaj powinien znajdować się kod wysyłający dane logowania do serwera
-    // i obsługujący odpowiedź
+    //Początek pobierania danych i logowania
 
-    if (!email || !password) {
-      setError('Podaj adres e-mail i hasło.');
-    } else {
-      setError('');
-      // Tutaj powinien znajdować się kod logujący użytkownika
-    }
+    const handleSubmit = async (e: SyntheticEvent) => {
+      e.preventDefault();
+      if (!email || !password) {
+        setError('Podaj adres e-mail i hasło.');
+      } else {
+        setError('');
+        const response = await fetch('http://localhost:3000/login', {
+          method: 'Post',
+          // headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        });
+        if (response.ok) {
+          const data = await response.json();
+          //pomyślne logowanie
+          console.log(data);
+          setSuccessMessage('Zalogowano pomyślnie.');
+          //tutaj możesz zaimplementować zmianę stanu aplikacji np. przekierowanie do innej strony po zalogowaniu
+        } else {
+          const error = await response.json();
+          //błąd logowania
+          setError(error.message);
+        }
+      }
   };
+  //};
 
   return (
     <form onSubmit={handleSubmit}>
@@ -29,9 +50,10 @@ function LoginForm() {
         Hasło:
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </label>
+      {successMessage && <div>{successMessage}</div>}
       {error && <p>{error}</p>}
       <button type="submit">Zaloguj się</button>
-    </form>
+    </form> 
   );
 }
 
