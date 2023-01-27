@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import './styles.registerModule.css'
 
 function RegisterForm() {
@@ -8,20 +8,41 @@ function RegisterForm() {
     password: '',
     confirmPassword: '',
   });
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (event: { target: { name: any; value: any; }; }) => {
     setFormData({
-      ...formData,
+     ...formData,
       [event.target.name]: event.target.value
+   });
+  }
+
+  const handleSubmit = async (e: SyntheticEvent) => {
+    e.preventDefault();
+    if (!formData.username || !formData.email || !formData.confirmPassword || !formData.password) {
+    setError('Podaj dane!');
+    } else {
+    setError('');
+    const response = await fetch('http://localhost:5000/api/auth/register', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json; charset=UTF-8'},
+    body: JSON.stringify({
+    username: formData.username,
+    email: formData.email,
+    password: formData.password,
+    passwordCheck: formData.confirmPassword,
+    }),
     });
-  }
-
-  const handleSubmit = (event: { preventDefault: () => void; }) => {
-    event.preventDefault();
-    console.log(formData);
-    // tutaj można dodać kod, który przesyła dane formularza do serwera
-  }
-
+    if (response.ok) {
+    setSuccessMessage('Rejestracja przebiegła pomyślnie.');
+    } else {
+    const error = await response.json();
+    setError(error.message);
+    }
+    }
+    };
+    
   return (
     <form onSubmit={handleSubmit}>
       <h2>Rejestracja</h2>

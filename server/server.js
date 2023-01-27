@@ -31,7 +31,7 @@ function isRegisterAuthenticated({ email }) {
 }
 
 server.post("/api/auth/register", (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
   if (isRegisterAuthenticated({ email })) {
     const status = 401;
     const message = "Email already exist";
@@ -50,7 +50,7 @@ server.post("/api/auth/register", (req, res) => {
 
     let last_item_id = data.users[data.users.length - 1].id;
 
-    data.users.push({ id: last_item_id + 1, email: email, password: password });
+    data.users.push({ id: last_item_id + 1, email: email, password: password, username: username });
     let writeData = fs.writeFile(
       "./users.json",
       JSON.stringify(data),
@@ -64,7 +64,7 @@ server.post("/api/auth/register", (req, res) => {
       }
     );
   });
-  const access_token = createToken({ email, password });
+  const access_token = createToken({ email, password, username });
   res.status(200).json({ access_token });
 });
 
