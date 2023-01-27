@@ -65,8 +65,6 @@ const Home: React.FC = () => {
       {state.page < state.total_pages && !loading && (
         <Button callback={() => setIsLoadingMore(true)}>Load More</Button>
       )}
-       <Link to="/Login">Login</Link>
-       <Link to="/Registration">Sign in</Link>
 
 
 
