@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    background: var(--darkGray);
+background-color: #4CAF50; 
     padding: 0 20px;
 `;
 
@@ -21,10 +21,12 @@ export const LogoImg = styled.img`
     }
 `;
 
+
 export const TMDBLogoImg = styled.img`
     width: 100px;
     @media screen and (max-width: 500px){
         width: 80px;
     }
 `;
+
 

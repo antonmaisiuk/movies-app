@@ -66,6 +66,8 @@ const Home: React.FC = () => {
         <Button callback={() => setIsLoadingMore(true)}>Load More</Button>
       )}
        <Link to="/Login">Login</Link>
+       <Link to="/Registration">Sign in</Link>
+
 
        
     </React.Fragment>

@@ -1,0 +1,46 @@
+
+body {
+    background-color: #f0f0f0;
+  }
+  
+  /* stylowanie formularza logowania */
+  form {
+    width: 400px; /* szerokość formularza */
+    margin: 150px auto; /* wyśrodkowanie formularza */
+    padding: 20px; /* odstępy wewnątrz formularza */
+    border-radius: 10px; /* zaokrąglenie rogów formularza */
+    background-color: #ffffff; /* kolor tła formularza */
+    box-shadow: 0px 0px 10px #cccccc; /* cień formularza */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  
+  form h2 {
+    text-align: center; 
+    margin-bottom: 30px; 
+    color: #333333; 
+    font-size:33px;
+  }
+  
+  
+  form input {
+    width: 100%; 
+    padding: 12px 20px; 
+    margin-bottom: 20px; 
+    border: none; 
+    border-radius: 4px; 
+    background-color: #f9f9f9; 
+    font-family: 'sans-serif';
+  }
+  
+
+  form button[type="submit"] {
+    width: 100%; 
+    padding: 12px 20px; 
+    background-color: #4CAF50; 
+    color: #ffffff; 
+    font-weight: bolder;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+  }

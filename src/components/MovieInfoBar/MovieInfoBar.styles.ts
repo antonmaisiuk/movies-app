@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     min-height: 50px;
-    background: var(--darkGray);
+    background-color: #4CAF50; 
     padding: 0 20px;
 `;
 export const Content = styled.div`
@@ -18,7 +18,7 @@ export const Content = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--mediumGray);
+        background: #1A6B06;
         border-radius: 20px;
         margin: 0 20px;
         flex: 1;

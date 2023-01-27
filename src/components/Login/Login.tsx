@@ -1,4 +1,5 @@
 import React, { SyntheticEvent, useState } from 'react';
+import './styles.loginModule.css'
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -42,6 +43,7 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Logowanie</h2>
       <label>
         Adres e-mail:
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />

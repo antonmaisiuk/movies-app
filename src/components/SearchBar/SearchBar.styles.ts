@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   padding: 0 20px;
   height: 70px;
-  background: var(--darkGray);
+  background-color: #4CAF50; 
 `;
 
 export const Content = styled.div`
@@ -14,7 +14,7 @@ export const Content = styled.div`
     max-width: var(--maxWidth);
     width: 100%;
     height: 45px;
-    background: var(--mediumGray);
+    background: #1A6B06;
     border-radius: 40px;
     color: var(--white);
 

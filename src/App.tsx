@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import Movie from "./components/Movie";
 import NotFound from "./components/NotFound";
 import Login from "./components/Login/Login";
+import Registration from "./components/Registration/Registration";
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/:movieId" element={<Movie />} />
           <Route path="/*" element={<NotFound />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
         </Routes>
         <GlobalStyle />
       </Router>
