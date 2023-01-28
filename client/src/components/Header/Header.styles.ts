@@ -21,6 +21,20 @@ export const LogoImg = styled.img`
     }
 `;
 
+export const StyledButton = styled.button`
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+
+  &:hover {
+    color: #dcdada;
+  }
+`;
 
 export const TMDBLogoImg = styled.img`
     width: 100px;

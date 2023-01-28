@@ -1,53 +1,73 @@
 
 body {
     background-color: #f0f0f0;
-  }
-  
-  /* stylowanie formularza logowania */
-  form {
-    width: 400px; /* szerokość formularza */
-    margin: 150px auto; /* wyśrodkowanie formularza */
-    padding: 20px; /* odstępy wewnątrz formularza */
-    border-radius: 10px; /* zaokrąglenie rogów formularza */
-    background-color: #ffffff; /* kolor tła formularza */
-    box-shadow: 0px 0px 10px #cccccc; /* cień formularza */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  
-  form h2 {
-    text-align: center; 
-    margin-bottom: 30px; 
-    color: #333333; 
-    font-size:33px;
-  }
-  
-  
-  form input {
-    width: 100%; 
-    padding: 12px 20px; 
-    margin-bottom: 20px; 
-    border: none; 
-    border-radius: 4px; 
-    background-color: #f9f9f9; 
-    font-family: 'sans-serif';
-  }
-  
+}
 
-  form button[type="submit"] {
-    width: 100%; 
-    padding: 12px 20px; 
-    background-color: #4CAF50; 
-    color: #ffffff; 
-    font-weight: bolder;
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-  }
+form {
+    width: 400px;
+    margin: 64px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #cccccc;
+    font-family: 'Franklin Gothic Medium', serif;
+}
 
-  .error-message {
-    color: red;
-    font-size: 0.8rem;
+
+form h2 {
     text-align: center;
-    margin-top: 1rem;
-  }
+    margin-bottom: 30px;
+    color: #333333;
+    font-size: 33px;
+}
+
+
+form input {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 15px;
+    font-weight: normal;
+    font-family: 'Franklin Gothic', serif;
+    /*font-family: 'sans-serif';*/
+}
+
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-weight: bolder;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #ff0000ab;
+    font-size: 19px;
+    text-align: center;
+    margin: 15px 0;
+}
+.success-message {
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.new_account{
+    color: #000;
+    font-size: 19px;
+    text-align: center;
+    margin-top: 10px;
+}
+.register_href{
+    color: #4CAF50;
+    cursor: pointer;
+    text-decoration: underline;
+}
