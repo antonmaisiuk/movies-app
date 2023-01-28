@@ -27,6 +27,7 @@ function LoginForm() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('jwt', data.access_token);
+        localStorage.setItem('userId', data.userId);
         setSuccessMessage('Zalogowano pomyślnie.');
         setTimeout(()=> navigate('/'), 1000 );
       } else {

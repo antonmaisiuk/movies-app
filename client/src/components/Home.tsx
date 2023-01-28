@@ -25,9 +25,7 @@ const Home: React.FC = () => {
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
     useHomeFetch();
 
-
-
-  // console.log(state);
+  const userId = Number(localStorage.getItem('userId'));
 
   if (error) {
     return <h1>Something Went Wrong...</h1>;
@@ -49,6 +47,7 @@ const Home: React.FC = () => {
           <Thumbnail
             key={movie.id}
             clickable
+            userId={userId}
             image={
               movie.poster_path
                 ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`

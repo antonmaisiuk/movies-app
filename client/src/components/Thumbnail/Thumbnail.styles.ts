@@ -5,6 +5,10 @@ type Props = {
   movieHeight?: boolean;
 }
 
+export const StyledMovieItem = styled.span<Props>`
+  position: relative;
+`;
+
 export const Image = styled.img<Props>`
   width: 100%;
   max-width: 720px;
