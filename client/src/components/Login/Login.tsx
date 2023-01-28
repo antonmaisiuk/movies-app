@@ -53,7 +53,7 @@ function LoginForm() {
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </label>
       {successMessage && <div>{successMessage}</div>}
-      {error && <p>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
       <button type="submit">Zaloguj się</button>
     </form>
   );
