@@ -9,6 +9,12 @@ const Header: React.FC = () => {
 
   const authToken = localStorage.getItem('jwt');
   const navigate = useNavigate();
+
+  const logOut = () => {
+    localStorage.removeItem('jwt');
+    navigate('/');
+  };
+
   return (
     <Wrapper>
       <Content>
@@ -16,7 +22,8 @@ const Header: React.FC = () => {
           <LogoImg src={RMDBLogo} alt="rmdb-logo"/>
         </Link>
         {authToken ?
-          <StyledButton onClick={()=> navigate('/account')}>Account</StyledButton> :
+          <><StyledButton onClick={() => navigate('/account')}>Account</StyledButton>
+          <StyledButton onClick={logOut}>Log Out</StyledButton></> :
           <StyledButton onClick={()=> navigate('/login')}>Log in</StyledButton>}
 
         {/* <Link style={{ color: "white", fontSize: "30px", fontFamily: "sans-serif"}} to="/login">Log in</Link>*/}
