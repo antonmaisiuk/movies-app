@@ -4,7 +4,7 @@ const jsonServer = require('json-server');
 const jwt = require('jsonwebtoken');
 
 const server = jsonServer.create();
-const userdb = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
+let userdb = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
@@ -19,16 +19,19 @@ function createToken(payload) {
 }
 
 function isLoginAuthenticated({ email, password }) {
+	userdb = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
 	return userdb.users.filter(
 		(user) => user.email === email && user.password === password
 	);
 }
 
 function isRegisterAuthenticated({ email }) {
+	userdb = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
 	return userdb.users.findIndex((user) => user.email === email) !== -1;
 }
 function getUserIndex(userId) {
 	// console.log('### userId: ', userId);
+	userdb = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
 	return userdb.users.findIndex((user) => user.id === userId);
 }
 
