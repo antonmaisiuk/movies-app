@@ -1,1 +1,47 @@
-{"users":[{"id":2,"email":"test@gmail.com","password":"123456","username":"Test","favorites":[]},{"id":3,"email":"maisiuk.anton@gmail.com","password":"123","username":"Anton","favorites":[536554,76600,846433,436270,505642,19995]},{"id":4,"email":"marcin@gmail.com","password":"123","username":"Marcin","favorites":[]}]}
+{
+  "users": [
+    {
+      "id": 2,
+      "email": "test@gmail.com",
+      "password": "123456",
+      "username": "Test",
+      "favorites": []
+    },
+    {
+      "id": 3,
+      "email": "maisiuk.anton@gmail.com",
+      "password": "123",
+      "username": "Anton",
+      "favorites": [
+        536554,
+        76600,
+        846433,
+        436270,
+        505642,
+        19995,
+        555604,
+        573171,
+        573171,
+        1041513,
+        1041513,
+        315162,
+        846433,
+        846433,
+        846433,
+        315162,
+        315162,
+        315162,
+        315162,
+        315162,
+        315162
+      ]
+    },
+    {
+      "id": 4,
+      "email": "marcin@gmail.com",
+      "password": "123",
+      "username": "Marcin",
+      "favorites": []
+    }
+  ]
+}
