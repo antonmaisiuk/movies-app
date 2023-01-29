@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
 // Config
@@ -21,11 +21,33 @@ import NoImage from "../images/no_image.jpg";
 
 
 
+const sortResults = (results: any[], sortOrder: string) => {
+  return [...results].sort((a, b) => {
+    if (sortOrder === 'asc') {
+      return a.vote_average - b.vote_average;
+    } else {
+      return b.vote_average - a.vote_average;
+    }
+  });
+};
+
 const Home: React.FC = () => {
+  const [sortOrder, setSortOrder] = useState('asc');
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
     useHomeFetch();
-
+  const [sortedResults, setSortedResults] = useState<any[]>([]);
   const userId = Number(localStorage.getItem('userId'));
+
+  useEffect(() => {
+    if (state.results.length) {
+      setSortedResults(sortResults(state.results, sortOrder));
+    }
+  }, [state.results, sortOrder]);
+
+  const handleSort = (order: string) => {
+    setSortOrder(order);
+    setSortedResults(sortResults(state.results, order));
+  };
 
   if (error) {
     return <h1>Something Went Wrong...</h1>;
@@ -42,8 +64,13 @@ const Home: React.FC = () => {
 
       <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
 
+      <div>
+        <button onClick={() => handleSort('asc')}>Sort by lowest rate</button>
+        <button onClick={() => handleSort('desc')}>Sort by highest rate</button>
+      </div>
+
       <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
-        {state.results.map(movie => (
+        {sortedResults.map(movie => (
           <Thumbnail
             key={movie.id}
             clickable
