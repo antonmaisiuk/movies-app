@@ -12,8 +12,10 @@ const intialState = {
 };
 
 export const useHomeFetch = () => {
+  const userId = Number(localStorage.getItem('userId'));
   const [searchTerm, setSearchTerm] = useState("");
   const [state, setState] = useState(intialState);
+  const [favMovies, setFavMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setEror] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -35,8 +37,33 @@ export const useHomeFetch = () => {
     setLoading(false);
   };
 
+  const fetchFavoriteMovies = async (userId: number) => {
+    const response = await fetch('http://localhost:5000/api/like/' + userId, {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json; charset=UTF-8'},
+    });
+    if (response.ok) {
+      const result: Movie[] = [];
+      const favMovies = await response.json();
+      favMovies.movies.map(async (movie: string) => {
+        result.push(await API.fetchMovie(movie));
+      });
+      // console.log(result);
+      setFavMovies(result);
+    } else {
+      const error = await response.json();
+      console.log(error);
+      return [];
+    }
+  }
+
+  // useEffect(() =>{
+  //   fetchFavoriteMovies(userId);
+  // })
+
   useEffect(() => {
     fetchMovies(1);
+    fetchFavoriteMovies(userId);
   }, []);
 
   useEffect(() => {
@@ -64,7 +91,8 @@ export const useHomeFetch = () => {
     if (!searchTerm) {
       return sessionStorage.setItem("homeState", JSON.stringify(state));
     }
+
   }, [searchTerm, state]);
 
-  return { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore };
+  return { state, favMovies, loading, error, searchTerm, setSearchTerm, setIsLoadingMore };
 };

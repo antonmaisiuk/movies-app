@@ -20,3 +20,18 @@ export const About = styled.div`
     font-weight: bold;
   }
 `;
+
+export const StyledFavoritesMovies = styled.div`
+  display: flex;
+  //height: 150px;
+  span{
+    margin-right: 10px;
+  }
+  span:last-child{
+    margin-right: 0;
+  }
+  span > img{
+    //width: auto;
+    height: 250px;
+  }
+`;
