@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-// Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config/config";
 
-// Components
 import HeroImage from "./HeroImage";
 import Grid from "./Grid";
 import Thumbnail from "./Thumbnail";
@@ -11,11 +9,8 @@ import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
 import Button from "./Button";
 
-
-// Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
 
-// Image: if API fails to render image then the fallback image used this one
 import NoImage from "../images/no_image.jpg";
 import { StyledSortBlock } from "./styled";
 import {Content, Wrapper } from "./styled";

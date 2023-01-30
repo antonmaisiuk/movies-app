@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import {Wrapper} from '../Grid/Grid.styles';
-import {PageTitle} from './styled';
+import {PageTitle, StyledP} from './styled';
 import {Movie} from "../../API/API";
 import {IMAGE_BASE_URL, POSTER_SIZE} from "../../config/config";
 import NoImage from "../../images/no_image.jpg";
@@ -61,7 +61,7 @@ const Account: FC<Props> = ({userId, movies}) => {
             movieHeight={false}
             movieId={movie.id}
             />
-            )) : <p>You don't have favorite movies</p>}
+            )) : <StyledP>You don't have favorite movies</StyledP>}
         </Grid>
       </div>
     </Wrapper>

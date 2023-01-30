@@ -5,7 +5,11 @@ export const PageTitle = styled.h1`
   font-size: 50px;
   font-family: sans-serif;
 `;
-export const About = styled.div`
+export const StyledP = styled.p`
+  color: #000;
+`;
+
+  export const About = styled.div`
   margin: 15px 0;
   color: #000;
   font-family: sans-serif;

@@ -19,7 +19,8 @@ const Header: React.FC = () => {
     <Wrapper>
       <Content>
         <Link to="/">
-          <LogoImg src={RMDBLogo} alt="rmdb-logo"/>
+          <h1>Movies</h1>
+          {/*<LogoImg src={RMDBLogo} alt="rmdb-logo"/>*/}
         </Link>
         {authToken ?
           <>

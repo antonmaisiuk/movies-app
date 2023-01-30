@@ -10,8 +10,13 @@ export const StyledSortBlock = styled.div`
     -moz-border-radius: 8px;
     border-radius: 8px;
     border: 1px solid rgba(59, 59, 59, 0.23);
-    &:first-child{
+
+    &:first-child {
       margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: #84ce87;
     }
   }
 `;

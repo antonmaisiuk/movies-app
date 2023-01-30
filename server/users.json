@@ -1,1 +1,65 @@
-{"users":[{"id":2,"email":"test@gmail.com","password":"123456","username":"Test","favorites":[315162,536554,76600,76600,653851,653851,846433,846433,736526,661374,661374,661374,661374,661374,661374,661374]},{"id":3,"email":"maisiuk.anton@gmail.com","password":"123","username":"Anton","favorites":[536554,76600,846433,436270,505642,19995,76600,843794]},{"id":4,"email":"marcin@gmail.com","password":"123","username":"Marcin","favorites":[]}]}
+{
+  "users": [
+    {
+      "id": 2,
+      "email": "test@gmail.com",
+      "password": "123456",
+      "username": "Test",
+      "favorites": [
+        315162,
+        536554,
+        76600,
+        76600,
+        653851,
+        653851,
+        846433,
+        846433,
+        736526,
+        661374,
+        661374,
+        661374,
+        661374,
+        661374,
+        661374,
+        661374
+      ]
+    },
+    {
+      "id": 3,
+      "email": "maisiuk.anton@gmail.com",
+      "password": "123",
+      "username": "Anton",
+      "favorites": []
+    },
+    {
+      "id": 4,
+      "email": "marcin@gmail.com",
+      "password": "123",
+      "username": "Marcin",
+      "favorites": []
+    },
+    {
+      "id": 5,
+      "email": "admin@gmai.com",
+      "password": "123",
+      "username": "Admin",
+      "favorites": [
+        315162,
+        877703,
+        542196,
+        736526
+      ]
+    },
+    {
+      "id": 6,
+      "email": "test22@gmail.com",
+      "password": "123",
+      "username": "test22",
+      "favorites": [
+        542196,
+        676547,
+        19995
+      ]
+    }
+  ]
+}
