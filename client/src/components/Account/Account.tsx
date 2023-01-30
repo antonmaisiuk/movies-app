@@ -49,7 +49,7 @@ const Account: FC<Props> = ({userId, movies}) => {
         <PageTitle>Welcome to Your Personal Account</PageTitle>
 
         <Grid header={"Your Favorite Movies"}>
-          {list.map((movie) =>(
+          {list.length ? list.map((movie) =>(
             <Thumbnail
             key={movie.id}
             clickable
@@ -61,7 +61,7 @@ const Account: FC<Props> = ({userId, movies}) => {
             movieHeight={false}
             movieId={movie.id}
             />
-            ))}
+            )) : <p>You don't have favorite movies</p>}
         </Grid>
       </div>
     </Wrapper>

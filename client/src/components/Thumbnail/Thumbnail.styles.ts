@@ -15,7 +15,7 @@ export const Image = styled.img<Props>`
   border-radius: 20px;
   transition: all 0.3s;
   object-fit: cover;
-  height: ${({ movieHeight }) => (movieHeight ? `150px` : `auto`)};
+  height: ${({ movieHeight }) => (movieHeight ? `520px` : `auto`)};
   animation: animateThumb 0.5s;
 
   :hover {

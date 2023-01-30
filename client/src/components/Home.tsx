@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config/config";
@@ -18,6 +17,8 @@ import { useHomeFetch } from "../hooks/useHomeFetch";
 
 // Image: if API fails to render image then the fallback image used this one
 import NoImage from "../images/no_image.jpg";
+import { StyledSortBlock } from "./styled";
+import {Content, Wrapper } from "./styled";
 
 
 
@@ -62,12 +63,17 @@ const Home: React.FC = () => {
         />
       ) : null}
 
-      <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
+      <SearchBar setSearchTerm={setSearchTerm}>
+      </SearchBar>
 
-      <div>
+      <Wrapper>
+        <Content>
+      <StyledSortBlock>
         <button onClick={() => handleSort('asc')}>Sort by lowest rate</button>
         <button onClick={() => handleSort('desc')}>Sort by highest rate</button>
-      </div>
+      </StyledSortBlock>
+        </Content></Wrapper>
+
 
       <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
         {sortedResults.map(movie => (
